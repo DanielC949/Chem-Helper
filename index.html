@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chemistry Helper</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>	
+	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+	<script src='elements.js'></script>
+	<script src='base_lib.js'></script>
+	<script src='conversions.js'></script>
+	<script src='da_lib.js'></script>
+</head>
+<body>
+	<div class='tabbedPanel'>
+		<ul>
+			<li> <a href='#eStoic'>Equation Stoichiometry</a> </li>
+		</ul>
+
+		<div id='eStoic'>
+			<input type='text' id='eStoic-eqInput'>
+			<br>
+			<input type='text' id='eStioc-given'>
+			<input type='text' id='eStoic-find'>
+			<br>
+			<input type='button' id='eStoic-cal' value='Calculate'>
+			<br>
+			<p></p>
+		</div>
+		<p id='display' style=''>PH</p>
+	</div>
+
+	<script type='text/javascript'>
+		$(function() {
+			$('#display').html(formatDA(getConvI(1, 'mol', 'L')));
+
+			//console.log(getConv('m', 'ft'));
+
+			/*$('#eStoic-cal').click(function (e) {
+				try {
+
+				} catch {
+
+				}
+			});*/
+
+			$('.tabbedPanel').tabs({heightStyle: 'auto'});
+		});
+	</script>
+</body>
+</html>
